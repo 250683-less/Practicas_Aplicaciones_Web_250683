@@ -7,25 +7,27 @@
     <title>Leslie Yariveth Tellez Ortega @ T.S.U en Desarrollo de Software Multiplataforma</title>
     <link id="mi-favicon" rel="icon"
     href="assets/images/feliz.png" type="image/png">
+    <link rel="stylesheet"
+    href="css/styles.css"
 </head>
 <body>
     <!--======================-->
     <!-- NAVEGACIÓN -->
     <!--======================-->
-    <nav id="menu"> <!-- Etiqueta de semantica con el atributo id-->
+    <nav id="inicio"> <!-- Etiqueta de semantica con el atributo id-->
         <ul> <!-- Unordered List, Lista desordenada-->
-            <li>Inicio</li>
-            <li>Acerca de mí</li>
-            <li>Aspiraciones</li>
-            <li>Hobbies</li>
-            <li>FAvoritos</li>
-            <li>Redes Sociales </li>
+            <li class="menu_option"> <a href="#inicio">Inicio </a></li>
+            <li class="menu_option"> <a href="#acercaDeMi">Acerca de mí </a></li>
+            <li class="menu_option"> <a href="#aspiraciones">Aspiraciones </a></li>
+            <li class="menu_option"> <a href="#hobbies">Inicio </a></li>
+            <li class="menu_option"> <a href="#favoritos">Favoritos </a></li>
+            <li class="menu_option"> <a href="#redes">Redes Sociales </a></li>
 
         </ul>
     </nav>
     
     <!-- Acerca de mí-->
-     <section id="AcercaDeMí">
+     <section id="acercaDeMi">
         <h2> 👤 Acerca de mí 👁️👄👁️ </h2>
         <div> <!--Etiqueta de estrucutura que agrupa elementos-->
             <p>
@@ -89,7 +91,7 @@
      </section>
 
      <!--Hobbies-->
-     <section id="Hobbies">
+     <section id="hobbies">
         <h2>😮 Lo que disfruto hacer</h2>
         <div>
 
@@ -125,7 +127,7 @@
         </div>
      </section>
      <!--Favoritos-->
-     <section id ="FAvoritos">
+     <section id ="favoritos">
 
         <h2>Mis Favoritos</h2>
 
@@ -327,6 +329,19 @@
         </div>
 
     </section>
+
+    <!-- FOOTER -->
+     <footer>
+        <p>
+            Mi Primera Página web
+        </p>
+
+        <p id="anio">  </p>
+
+        <a href="#inicio"> <!-- anchor / ancla redireccionamiento en tu misma pagina-->
+          ↑ Volver al inicio
+        </a>
+     </footer>
     
 </body>
 </html>
