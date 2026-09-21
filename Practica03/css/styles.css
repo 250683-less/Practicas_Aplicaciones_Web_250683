@@ -1,4 +1,4 @@
-body
+/*body
 {
     background-color: #B8E1FF;
 }
@@ -22,4 +22,20 @@ section
 .menu_option:hover
 {
     background-color: #FF9EC4;
+}
+*/
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 10px;
+    border-color: red;
+    border-style: solid;
+    border-width: 5px;
+    padding: 50;
 }
