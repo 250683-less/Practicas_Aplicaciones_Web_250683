@@ -59,3 +59,53 @@ nav{
     z-index: 1000;
     transition: 0.3s;
 }
+
+nav h2{
+    color: white;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: palevioletred;
+
+}
+
+/*Parallax general */
+
+.parallax {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.parallax::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+   background: rgba(0, 0, 0, 0.38);
+
+}
+
+.parallax > *{
+    position: relative;
+    z-index: 2;
+}
