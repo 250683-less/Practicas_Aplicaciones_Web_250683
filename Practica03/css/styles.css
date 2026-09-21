@@ -33,9 +33,29 @@ html{
 }
 
 body{
-    margin: 10px;
-    border-color: red;
-    border-style: solid;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f172a;
+    color: #CCC;
+    line-height: 1.6;
+    /*border-color: red;
+    border-style: ;
     border-width: 5px;
-    padding: 50;
+    padding: 50;*/
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    z-index: 1000;
+    transition: 0.3s;
 }
