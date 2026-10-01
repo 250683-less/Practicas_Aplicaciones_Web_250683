@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mi perfil de estudiante">
-    <title>Leslie Yariveth Tellez Ortega @ T.S.U en Desarrollo de Software Multiplataforma</title>
-    <link id="mi-favicon" rel="icon"
-    href="assets/images/feliz.png" type="image/png">
+
+    <title>
+        Leslie Yariveth Tellez Ortega @ T.S.U en Desarrollo de Software Multiplataforma
+    </title>
+
+    <link id="mi-favicon"
+          rel="icon"
+          href="assets/images/feliz.png"
+          type="image/png">
+
     <link rel="stylesheet"
-    href="css/styles.css"
+          href="css/styles.css">
 </head>
+
 <body>
     <!--======================-->
     <!-- NAVEGACIÓN -->
     <!--======================-->
-    <nav id="inicio"> <!-- Etiqueta de semantica con el atributo id-->
+    <nav id="menu"> <!-- Etiqueta de semantica con el atributo id-->
         <ul> <!-- Unordered List, Lista desordenada-->
             <li class="menu_option"> <a href="#inicio">Inicio </a></li>
             <li class="menu_option"> <a href="#acercaDeMi">Acerca de mí </a></li>
             <li class="menu_option"> <a href="#aspiraciones">Aspiraciones </a></li>
-            <li class="menu_option"> <a href="#hobbies">Inicio </a></li>
+            <li class="menu_option"> <a href="#hobbies"> Hobbies </a></li>
             <li class="menu_option"> <a href="#favoritos">Favoritos </a></li>
             <li class="menu_option"> <a href="#redes">Redes Sociales </a></li>
 
@@ -27,23 +35,33 @@
     </nav>
     
  <header id="inicio" class="parallax parallax-1">
-    <div class="glass"> <!-- Aquí abre -->
+    <div class="glass">
 
-        <!-- Columna Izquierda -->
         <div class="bloque-foto">
-            <img src="assets/images/foto_perfil.jpg" class="perfil" alt="Foto de Less">
+            <img src="assets/images/foto_perfil.jpg"
+                 class="perfil"
+                 alt="Foto de Less">
         </div>
 
-        <!-- Columna Derecha -->
         <div class="contenido-derecho">
-            <h2>Holaa, soy Less (oﾟvﾟ)ノ</h2>
-            <p class="tagline">Estudiante | Apasionada por la tecnología | Soñadora</p>
-            <p class="frase">"La disciplina de hoy construye el éxito de mañana."</p>
-            <a href="#acerca" class="btn">Conóceme</a>
+            <h2>Holaa, soy Less </h2>
+
+            <p class="tagline">
+                Estudiante | Apasionada por la tecnología | Soñadora
+            </p>
+
+            <p class="frase">
+                "La disciplina de hoy construye el éxito de mañana."
+            </p>
+
+            <a href="#acerca" class="btn">
+                Conóceme
+            </a>
         </div>
 
-    </div> <!-- 👈 Aquí debe cerrar el glass para que encierre a ambos bloques -->
+    </div>
 </header>
+
     
     <!-- Acerca de mí-->
      <section id = "acerca" class = " seccion solido-1 "> 
@@ -83,11 +101,17 @@
         </div>
      </section>
      
-     <!--Aspiraciones-->
-     <section id="aspiraciones">
-        <h2>🎯 Mis aspiraciones</h2>
+     <!-- Parallax 2-->
 
-        <div>
+     <section class="parallax parallax-2">
+        <div class="glass frase">
+            <h2>🎯 Mis aspiraciones</h2>
+        </div>
+     </section>
+     <!--Aspiraciones-->
+     <section id="aspiraciones" class="seccion solido-2">
+
+        <div class="grid">
             <article>
                 <h3>🎓 Terminar mi carrera</h3>
                 <p>
@@ -112,8 +136,14 @@
      </section>
 
      <!--Hobbies-->
+     <section class= "parallax parallax-3">
+        <div class="glass frase">
+            <h2>😮Mis Hobbies</h2>
+        </div>
+     </section>
+
      <section id="hobbies">
-        <h2>😮 Lo que disfruto hacer</h2>
+        
         <div>
 
             <article>
@@ -148,9 +178,15 @@
         </div>
      </section>
      <!--Favoritos-->
-     <section id ="favoritos">
+      <section class= "parallax parallax-4">
+        <div class="glass frase">
+              <h2>Mis Favoritos</h2>    
+                </div>
+     </section>
 
-        <h2>Mis Favoritos</h2>
+     <section id ="favoritos " >
+
+        
 
         <article>
             <h3>🎬 Pelicula favorita</h3>
@@ -172,8 +208,7 @@
     <!-- REDES SOCIALES -->
     <!-- ============================= -->
 
-    <section id="redes"
-             >
+    <section id="redes" class="seccion redes">
 
         <h2>🤓 Mis redes sociales</h2>
 
@@ -181,7 +216,7 @@
             Puedes encontrarme en:
         </p>
 
-        <div >
+        <div class="redes-sociales" >
 
             <a href="https://github.com/"
                target="_blank"
