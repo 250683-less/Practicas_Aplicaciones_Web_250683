@@ -378,3 +378,430 @@ blockquote {
     width: 40px;            /* Controla el ancho del icono */
     height: 40px;           /* Controla el alto del icono */
 }
+
+/* =========================================
+   CARRUSEL DE FAVORITOS
+========================================= */
+
+.favoritos-intro {
+    text-align: center;
+    max-width: 650px;
+    margin: -20px auto 30px;
+    color: #cbd5e1;
+}
+
+#favoritos .contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#favoritos h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL DEL CARRUSEL
+========================================= */
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* Ventana que oculta las tarjetas inactivas */
+
+.carrusel-ventana {
+    overflow: hidden;
+    flex: 1 1 auto;
+    min-width: 0;
+    border-radius: 22px;
+}
+
+/* Pista horizontal */
+
+.carrusel-pista {
+    display: flex;
+    width: 100%;
+    transition: transform 0.45s ease;
+    will-change: transform;
+}
+
+/* =========================================
+   TARJETAS DE FAVORITOS
+========================================= */
+
+.favorito-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    padding: 25px 20px;
+    min-height: 350px;
+
+    background: rgba(41, 55, 85, 0.92);
+    color: #ffffff;
+
+    border: 1px solid #475569;
+    border-radius: 22px;
+
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    transition: background 0.3s, border-color 0.3s,
+                transform 0.3s;
+}
+
+.favorito-card:hover {
+    background: #334155;
+    border-color: #8b7ce8;
+    transform: translateY(-3px);
+}
+
+.favorito-card:focus-visible,
+.carrusel-flecha:focus-visible,
+.carrusel-indicadores button:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 4px;
+}
+
+/* Portadas */
+
+.favorito-card img {
+    display: block;
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Información de cada favorito */
+
+.favorito-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    color: #ffffff;
+}
+
+.favorito-info strong {
+    font-size: 1.15rem;
+}
+
+.favorito-info small {
+    color: #dbeafe;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   FLECHAS DE DESPLAZAMIENTO
+========================================= */
+
+.carrusel-flecha {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 1px solid #64748b;
+    border-radius: 50%;
+
+    background: #334155;
+    color: #ffffff;
+    font-size: 1.2rem;
+
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.carrusel-flecha:hover {
+    background: #6d5bd0;
+    transform: scale(1.08);
+}
+
+/* =========================================
+   INDICADORES INFERIORES
+========================================= */
+
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.carrusel-indicadores button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+    background: #64748b;
+
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.carrusel-indicadores button.activo {
+    background: #38bdf8;
+    transform: scale(1.25);
+}
+
+/* =========================================
+   MODAL MULTIMEDIA A PANTALLA COMPLETA
+========================================= */
+
+/* Ocultar el modal cuando está cerrado */
+
+.modal-favoritos[hidden] {
+    display: none !important;
+}
+
+/* Fondo de pantalla completa */
+
+.modal-favoritos {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+
+    background: #000000;
+    backdrop-filter: none;
+}
+
+/* Panel principal */
+
+.modal-favoritos .modal-panel {
+    display: flex;
+    flex-direction: column;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: 100% !important;
+    max-height: none !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    overflow: hidden;
+    background: #000000;
+}
+
+/* Encabezado */
+
+.modal-favoritos .modal-cabecera {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 12px 20px;
+
+    background: #0f172a;
+    border-bottom: 1px solid #334155;
+}
+
+.modal-favoritos .modal-cabecera h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+/* Botón para cerrar */
+
+.modal-favoritos #cerrar-modal {
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: #334155;
+    color: #ffffff;
+    font-size: 28px;
+
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.modal-favoritos #cerrar-modal:hover {
+    background: #6d5bd0;
+    transform: scale(1.05);
+}
+
+/* Área multimedia */
+
+.modal-favoritos .modal-contenido {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden;
+    background: #000000;
+}
+
+/* Video */
+
+.modal-favoritos .modal-contenido video {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+    background: #000000;
+}
+
+/* Audio */
+
+.modal-favoritos .modal-contenido audio {
+    display: block;
+    width: min(90%, 700px);
+}
+
+/* PDF */
+
+.modal-favoritos .modal-contenido iframe {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 0;
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+    background: #ffffff;
+}
+
+/* Bloquear el desplazamiento del fondo */
+
+body.modal-abierto {
+    overflow: hidden !important;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO
+========================================= */
+
+@media (max-width: 600px) {
+    #favoritos {
+        padding: 65px 5%;
+    }
+
+    .carrusel {
+        gap: 8px;
+    }
+
+    .carrusel-flecha {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+
+    .favorito-card {
+        min-height: 300px;
+        padding: 18px 12px;
+    }
+
+    .favorito-card img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .favorito-info strong {
+        font-size: 1rem;
+    }
+
+    .modal-favoritos .modal-cabecera {
+        padding: 8px 12px;
+    }
+
+    .modal-favoritos .modal-cabecera h2 {
+        font-size: 1rem;
+    }
+
+    .modal-favoritos #cerrar-modal {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* Respetar la preferencia de movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+    .carrusel-pista,
+    .favorito-card,
+    .carrusel-flecha,
+    .carrusel-indicadores button {
+        transition: none;
+    }
+}

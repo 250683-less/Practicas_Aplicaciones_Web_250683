@@ -16,6 +16,7 @@
 
     <link rel="stylesheet"
           href="css/styles.css">
+    <script src="js/app2.js" defer></script>      
 </head>
 
 <body>
@@ -178,32 +179,204 @@
         </div>
      </section>
      <!--Favoritos-->
-      <section class= "parallax parallax-4">
-        <div class="glass frase">
-              <h2>Mis Favoritos</h2>    
+<!-- ==========================================
+     SECCIÓN DE FAVORITOS
+========================================== -->
+
+<section id="favoritos" class="seccion solido-4">
+
+    <div class="contenedor">
+
+        <h2>✨ Mis favoritos ✨</h2>
+
+        <p class="favoritos-intro">
+            Descubre mis películas, canciones y libros favoritos.
+            Selecciona una tarjeta para explorar su contenido.
+        </p>
+
+        <!-- CARRUSEL -->
+
+        <div class="carrusel" aria-label="Carrusel de favoritos">
+
+            <!-- BOTÓN ANTERIOR -->
+
+            <button
+                class="carrusel-flecha"
+                id="anterior"
+                type="button"
+                aria-label="Mostrar favorito anterior">
+                &#10094;
+            </button>
+
+            <!-- VENTANA DEL CARRUSEL -->
+
+            <div class="carrusel-ventana">
+
+                <div class="carrusel-pista" id="pista">
+
+                    <!-- ==================================
+                         FAVORITO 1: PELÍCULA
+                    =================================== -->
+
+                    <button
+                        class="favorito-card"
+                        type="button"
+                        data-tipo="video"
+                        data-src="assets/videos/Una chica del siglo XX (Tráiler) _ Tráiler en Español _ Netflix.mp4"
+                        data-titulo="Mi película favorita: Una chica del siglo XX">
+
+                        <img
+                            src="assets/images/movie_portait.jpg"
+                            alt="Portada de la película Una chica del siglo XX"
+                            loading="lazy">
+
+                        <span class="favorito-info">
+
+                            <strong>
+                                🎬 Una chica del siglo XX
+                            </strong>
+
+                            <small>
+                                Ver tráiler
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <!-- ==================================
+                         FAVORITO 2: CANCIÓN
+                    =================================== -->
+
+                    <button
+                        class="favorito-card"
+                        type="button"
+                        data-tipo="audio"
+                        data-src="assets/audios/Body to Body - BTS.mp3"
+                        data-titulo="Mi canción favorita: Body to Body">
+
+                        <img
+                            src="assets/images/song_portait.jpg"
+                            alt="Portada de la canción favorita"
+                            loading="lazy">
+
+                        <span class="favorito-info">
+
+                            <strong>
+                                🎵 Body to Body - BTS
+                            </strong>
+
+                            <small>
+                                Escuchar canción
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <!-- ==================================
+                         FAVORITO 3: LIBRO
+                    =================================== -->
+
+                    <button
+                        class="favorito-card"
+                        type="button"
+                        data-tipo="pdf"
+                        data-src="assets/documents/A Tres Metros Sobre El Cielo - Federico Moccia.pdf"
+                        data-titulo="Mi libro favorito: A tres metros sobre el cielo">
+
+                        <img
+                            src="assets/images/book_portait.jpg"
+                            alt="Portada del libro A tres metros sobre el cielo"
+                            loading="lazy">
+
+                        <span class="favorito-info">
+
+                            <strong>
+                                📚 A tres metros sobre el cielo
+                            </strong>
+
+                            <small>
+                                Leer capítulo PDF
+                            </small>
+
+                        </span>
+
+                    </button>
+
                 </div>
-     </section>
-        <h2>Mis Favoritos</h2>
-        <div class="grid tres">
-        <article class="card">
-            <h3>🎬 Pelicula favorita</h3>
-            <p>SPIDERMAN</p>
 
-            <img src="assets/images/SPITER.jpeg" class="poster" alt="SPIDERMAN">
-        </article>
-        
-        <article class="card">
-            <h3>🎵 Canción favorita</h3>
-            <p>TE QUIERO TANTO</p>
-            <img src="assets/images/keeevi.jpg"
-                alt="Portada de Te Quiero Tanto"
-                 class="portada-musica">
-                <p class="nombre-cancion">TE QUIERO TANTO</p>
+            </div>
 
-                 <audio controls class="reproductor">
-                <source src="assets/images/YTDown.com_YouTube_Kevin-Kaarl-te-quiero-tanto-Video-Oficia_Media_q07Gd6Q-7dY_009_128k.mp3" type="audio/mpeg">
-                 </audio>
-        </article>
+            <!-- BOTÓN SIGUIENTE -->
+
+            <button
+                class="carrusel-flecha"
+                id="siguiente"
+                type="button"
+                aria-label="Mostrar siguiente favorito">
+                &#10095;
+            </button>
+
+        </div>
+
+        <!-- INDICADORES -->
+
+        <div
+            class="carrusel-indicadores"
+            id="indicadores"
+            aria-label="Seleccionar favorito">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     MODAL MULTIMEDIA
+========================================== -->
+
+<div
+    class="modal-favoritos"
+    id="modal-favoritos"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-titulo"
+    hidden>
+
+    <div class="modal-panel">
+
+        <!-- ENCABEZADO -->
+
+        <div class="modal-cabecera">
+
+            <h2 id="modal-titulo">
+                Mi favorito
+            </h2>
+
+            <button
+                id="cerrar-modal"
+                type="button"
+                aria-label="Cerrar ventana">
+                &times;
+            </button>
+
+        </div>
+
+        <!-- CONTENIDO MULTIMEDIA -->
+
+        <div
+            class="modal-contenido"
+            id="modal-contenido">
+        </div>
+
+    </div>
+
+</div>
+
      <!-- ============================= -->
     <!-- REDES SOCIALES -->
     <!-- ============================= -->
