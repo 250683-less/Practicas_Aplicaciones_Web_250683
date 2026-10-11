@@ -878,3 +878,195 @@ footer a:hover {
     box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
     transform: translateY(-3px);
 }
+
+
+/* =========================================
+   AJUSTES RESPONSIVOS PARA CELULARES
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* Evitar desbordamientos horizontales */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Menú adaptable */
+    nav {
+        padding: 10px 4%;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 14px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    /* Fondos y secciones */
+    .parallax {
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        padding: 65px 16px;
+        background-attachment: scroll;
+    }
+
+    .parallax-2,
+    .parallax-3,
+    .parallax-4 {
+        min-height: auto;
+        padding: 50px 16px;
+    }
+
+    .seccion {
+        width: 100%;
+        min-height: auto;
+        padding: 55px 5%;
+    }
+
+    .seccion h2 {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+        margin-bottom: 28px;
+    }
+
+    /* Tarjeta de presentación */
+    .hero-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px 18px;
+    }
+
+    .hero-card h1 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+
+    .hero-card p {
+        font-size: 1rem;
+    }
+
+    /* Foto y descripción */
+    .glass {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        padding: 25px 18px;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .contenido-derecho {
+        align-items: center;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-contenido {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .perfil {
+        width: clamp(130px, 40vw, 180px);
+        height: clamp(130px, 40vw, 180px);
+    }
+
+    /* Contenedores */
+    .contenedor {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Datos personales: dos columnas */
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .datos article {
+        min-width: 0;
+        padding: 15px 10px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Tarjetas: dos columnas */
+    .grid,
+    .grid.seis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        width: 100%;
+    }
+
+    .card {
+        min-width: 0;
+        padding: 18px 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Redes sociales */
+    .redes-sociales {
+        gap: 12px;
+    }
+
+    .redes-sociales a {
+        width: 100px;
+        height: 100px;
+        padding: 12px;
+    }
+
+    /* Carrusel */
+    .carrusel {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .favorito-card {
+        min-width: 0;
+    }
+}
+
+/* Celulares pequeños: una columna */
+@media (max-width: 480px) {
+
+    .grid,
+    .grid.seis {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .seccion {
+        padding: 45px 16px;
+    }
+
+    .hero-card {
+        padding: 22px 15px;
+    }
+
+    nav ul {
+        gap: 8px 10px;
+    }
+
+    nav a {
+        font-size: 0.78rem;
+    }
+}
