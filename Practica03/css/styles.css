@@ -9,8 +9,8 @@ html{
 body{
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #0f172a; /* Azul noche profundo */
-    color: #e2e8f0; /* Blanco suave, no lastima la vista */
+    background: radial-gradient(ellipse at top, #302844 0%, #171526 58%, #100E1C 100%); /* Fondo ciruela profundo */
+    color: #FFF7FF; /* Blanco suave, no lastima la vista */
     line-height: 1.6;
     /*border-color: red;
     border-style: ;
@@ -27,15 +27,17 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(15, 23, 42, 0.45);
+    background: rgba(23, 21, 38, 0.88);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.32);
+    box-shadow: 0 8px 28px rgba(8, 4, 8, 0.28);
     z-index: 1000;
     transition: 0.3s;
 }
 
 nav h2{
-    color: white;
+    color: #F0ABFC;
+    text-shadow: 0 0 18px rgba(167, 139, 250, 0.25);
 }
 
 nav ul{
@@ -45,15 +47,15 @@ nav ul{
 }
 
 nav a{
-    color: white;
+    color: #FFF7FF;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: palevioletred;
-
+    color: #C4B5FD;
+    text-shadow: 0 0 12px rgba(192, 132, 252, 0.55);
 }
 
 /*Parallax general */
@@ -75,7 +77,7 @@ nav a:hover {
     content: "";
     position: absolute;
     inset: 0;
-   background: rgba(0, 0, 0, 0.38);
+   background: linear-gradient(135deg, rgba(17, 15, 32, 0.50), rgba(66, 44, 92, 0.34));
 
 }
 
@@ -88,30 +90,42 @@ nav a:hover {
 *
 .parallax-1 {
     background-image: 
-    url("../assets/images/fondo-4.jpg");
+    url("../assets/images/fondo-11.png");
 }
 .parallax-2{
-    background-image: url("../assets/images/fondo-5.jpg");
+    background-image: url("../assets/images/fondo-12.png");
 }
 .parallax-3{
-    background-image: url("../assets/images/fondo-8.jpg");
+    background-image: url("../assets/images/fondo-13.png");
 }
 .parallax-4{
-    background-image: url("../assets/images/fondo-9.jpg");
+    background-image: url("../assets/images/fondo-14.png");
 }
 
-
+.parallax-2,
+.parallax-3,
+.parallax-4 {
+    min-height: 55vh;
+    padding: 50px 20px;
+}
 
 
 .hero-card {
     max-width: 700px;
     padding: 45px;
     text-align: center;
+    background: rgba(23, 17, 22, 0.46);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(240, 171, 252, 0.25);
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(8, 4, 8, 0.28);
 }
 
 .hero-card h1{
     font-size: 3rem;
     margin-bottom: 8px;
+    color: #F0ABFC;
+    text-shadow: 0 3px 24px rgba(167, 139, 250, 0.24);
 }
 
 .hero-card p {
@@ -129,7 +143,8 @@ blockquote {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 28px;
-    background-color: #6d5bd0;
+    background: linear-gradient(135deg, #8B5CC7, #F0ABFC);
+    box-shadow: 0 8px 22px rgba(139, 92, 199, 0.28);
     color: white;
     text-decoration: none;
     font-weight: bold ;
@@ -140,8 +155,8 @@ blockquote {
 .btn:hover {
     transform: translateY(-4px);
 
-    box-shadow: 0, 12px, 25px, rgba(0, 0, 0, 0.25);
-    background-color: #8b7ce8;
+    box-shadow: 0 12px 25px rgba(167, 139, 250, 0.32);
+    background: linear-gradient(135deg, #A78BFA, #F0ABFC);
     color: white;
 
 }  
@@ -155,12 +170,12 @@ blockquote {
     text-align: left;          /* Asegura que los textos se alineen a la izquierda */
     
     /* Tus estilos de cristal que ya tenías */
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, rgba(255, 243, 245, 0.12), rgba(84, 37, 56, 0.32));
+    color: #FFF7FF;
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(8, 4, 8, 0.25);
+    border: 1px solid rgba(240, 171, 252, 0.30);
 }
 
 /* 2. Ajustamos tu clase .perfil (con el clamp corregido) */
@@ -169,8 +184,8 @@ blockquote {
     height: clamp(140px, 20vw, 200px);
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 4px solid rgba(255, 179, 199, 0.88);
+    box-shadow: 0 0 0 7px rgba(167, 139, 250, 0.12), 0 12px 32px rgba(0, 0, 0, 0.38);
     
     display: block;
 }
@@ -211,6 +226,8 @@ blockquote {
     text-align: center;
     font-size: 2.4rem;
     margin-bottom: 45px;
+    color: #F0ABFC;
+    text-shadow: 0 4px 24px rgba(167, 139, 250, 0.22);
 }
 
 /* ========================== */
@@ -218,21 +235,21 @@ blockquote {
 /* ========================== */
 
 .solido-1 {
-    background: #0f172a;
+    background: linear-gradient(135deg, #171526 0%, #29233E 55%, #44345B 100%);
 }
 
 .solido-2 {
-    background: #0b1120;
-    color: #ffffff;
+    background: linear-gradient(135deg, #211B31 0%, #302844 55%, #5B4676 100%);
+    color: #FFF7FF;
 }
 
 .solido-3 {
-    background: #0f172a;
+    background: linear-gradient(135deg, #171526 0%, #302844 50%, #70539A 100%);
 }
 
 .solido-4 {
-    background: #0b1120;
-    color: #ffffff;
+    background: linear-gradient(135deg, #211B31 0%, #44345B 55%, #5B4676 100%);
+    color: #FFF7FF;
 }
 
 /* ========================== */
@@ -245,30 +262,32 @@ blockquote {
 }
 
 .card {
-    background: rgba(7, 7, 7, 0.92); /* Un toque más sólido para mejor contraste */
-    color: #1e293b; /* Azul marino oscuro muy elegante para el texto */
+    background: linear-gradient(145deg, rgba(56, 32, 45, 0.96), rgba(36, 23, 32, 0.98)); /* Fondo ciruela con contraste */
+    color: #FFF7FF; /* Texto claro para mantener el contraste */
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 16px 36px rgba(8, 4, 8, 0.24);
+    border: 1px solid rgba(240, 171, 252, 0.16);
     transition: 0.3s;
 }
 
 .card h3, 
 .card h4 {
-    color: #FFAA00; /* Oro clásico de Minecraft  */
+    color: #C4B5FD; /* Oro clásico de Minecraft  */
     margin-top: 0;   /* Quita márgenes extra para que quede centrado */
 }
 
 /* 👇 El texto descriptivo lo dejamos en un gris oscuro para que sea legible sobre el fondo blanco */
 .card p {
-    color: #eff0f1; 
+    color: #FFF7FF; 
 }
 
 
 .card:hover {
-    transform: translateY(-8px);
-    background: #3d3c3c; /* Brilla a blanco puro al pasar el mouse */
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25); /* Sombra suave acorde al fondo oscuro */
+    transform: translateY(-6px);
+    background: linear-gradient(145deg, #44345B, #5B4676);
+    border-color: rgba(196, 181, 253, 0.45);
+    box-shadow: 0 22px 45px rgba(8, 4, 8, 0.34);
 }
 
 
@@ -287,19 +306,26 @@ blockquote {
 .datos article {
     padding: 20px;
     text-align: center;
-    /* Cambiamos a un fondo oscuro semitransparente */
-    background: rgba(20, 20, 20, 0.75); 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(145deg, rgba(167, 139, 250, 0.16), rgba(240, 171, 252, 0.08));
+    border: 1px solid rgba(196, 181, 253, 0.40);
     border-radius: 18px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    /* Asegura que el texto sea blanco o claro */
-    color: #ffffff; 
+    box-shadow: 0 10px 25px rgba(8, 4, 8, 0.25);
+    backdrop-filter: blur(14px);
+    color: #FFF7FF;
+    transition: 0.3s;
+}
+
+.datos article:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(145deg, rgba(167, 139, 250, 0.26), rgba(240, 171, 252, 0.16));
+    border-color: rgba(240, 171, 252, 0.65);
+    box-shadow: 0 18px 35px rgba(8, 4, 8, 0.32);
 }
 
 /* Opcional: los títulos de  hobbies tengan el color oro clásico de Minecraft */
 .datos article h3,
 .datos article h4 {
-    color: #FFAA00; 
+    color: #C4B5FD; 
 }
 
 
@@ -329,6 +355,7 @@ blockquote {
     max-height: 280px;
     object-fit: cover;
     border-radius: 15px;
+    box-shadow: 0 10px 24px rgba(8, 4, 8, 0.22);
 }
 /* ================= */
 /* REDES SOCIALES    */
@@ -355,22 +382,23 @@ blockquote {
     background: 
         linear-gradient( 
             145deg, 
-            #1e293b, 
-            #334155
+            #302844, 
+            #44345B
     );
 
     border-radius: 18px;
     text-decoration: none;
     box-shadow: 
         0 12px 25px
-        rgba(0, 0, 0, 0.2);
+        rgba(8, 4, 8, 0.32);
 
     transition: 0.3s;
 }
 
 .redes-sociales a:hover {
     transform: translateY(-8px) scale(1.05);
-    background: linear-gradient(145deg, #1e293b, #6d5bd0);
+    background: linear-gradient(145deg, #5B4676, #A78BFA);
+    box-shadow: 0 16px 32px rgba(184, 50, 91, 0.24);
 }
 
 /* 3. ¡ESTO ES LO MÁS IMPORTANTE PARA ENCOGER AL GATITO DE GITHUB! */
@@ -387,7 +415,7 @@ blockquote {
     text-align: center;
     max-width: 650px;
     margin: -20px auto 30px;
-    color: #cbd5e1;
+    color: #E9DDFB;
 }
 
 #favoritos .contenedor {
@@ -397,8 +425,9 @@ blockquote {
 
 #favoritos h2 {
     text-align: center;
-    color: #ffffff;
+    color: #F0ABFC;
     margin-bottom: 35px;
+    text-shadow: 0 4px 22px rgba(167, 139, 250, 0.22);
 }
 
 /* =========================================
@@ -451,10 +480,11 @@ blockquote {
     padding: 25px 20px;
     min-height: 350px;
 
-    background: rgba(41, 55, 85, 0.92);
-    color: #ffffff;
+    background: linear-gradient(145deg, rgba(56, 32, 45, 0.98), rgba(36, 23, 32, 0.98));
+    color: #FFF7FF;
 
-    border: 1px solid #475569;
+    border: 1px solid rgba(196, 181, 253, 0.40);
+    box-shadow: 0 14px 35px rgba(8, 4, 8, 0.24);
     border-radius: 22px;
 
     cursor: pointer;
@@ -466,15 +496,16 @@ blockquote {
 }
 
 .favorito-card:hover {
-    background: #334155;
-    border-color: #8b7ce8;
+    background: linear-gradient(145deg, #44345B, #5B4676);
+    border-color: #C4B5FD;
+    box-shadow: 0 18px 38px rgba(8, 4, 8, 0.30);
     transform: translateY(-3px);
 }
 
 .favorito-card:focus-visible,
 .carrusel-flecha:focus-visible,
 .carrusel-indicadores button:focus-visible {
-    outline: 3px solid #38bdf8;
+    outline: 3px solid #C4B5FD;
     outline-offset: 4px;
 }
 
@@ -500,7 +531,7 @@ blockquote {
     align-items: center;
     gap: 6px;
     padding: 8px;
-    color: #ffffff;
+    color: #FFF7FF;
 }
 
 .favorito-info strong {
@@ -508,7 +539,7 @@ blockquote {
 }
 
 .favorito-info small {
-    color: #dbeafe;
+    color: #E9DDFB;
     font-size: 0.95rem;
 }
 
@@ -526,11 +557,12 @@ blockquote {
     justify-content: center;
 
     padding: 0;
-    border: 1px solid #64748b;
+    border: 1px solid #8B6BB8;
     border-radius: 50%;
 
-    background: #334155;
-    color: #ffffff;
+    background: linear-gradient(145deg, #44345B, #5B4676);
+    color: #FFF7FF;
+    box-shadow: 0 8px 20px rgba(8, 4, 8, 0.22);
     font-size: 1.2rem;
 
     cursor: pointer;
@@ -538,7 +570,8 @@ blockquote {
 }
 
 .carrusel-flecha:hover {
-    background: #6d5bd0;
+    background: linear-gradient(135deg, #8B5CC7, #F0ABFC);
+    box-shadow: 0 8px 20px rgba(139, 92, 199, 0.28);
     transform: scale(1.08);
 }
 
@@ -561,14 +594,14 @@ blockquote {
 
     border: 0;
     border-radius: 50%;
-    background: #64748b;
+    background: #8B6BB8;
 
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
 }
 
 .carrusel-indicadores button.activo {
-    background: #38bdf8;
+    background: #C4B5FD;
     transform: scale(1.25);
 }
 
@@ -600,7 +633,7 @@ blockquote {
     align-items: stretch;
     justify-content: stretch;
 
-    background: #000000;
+    background: radial-gradient(ellipse at top, #302844 0%, #171526 58%, #100E1C 100%);
     backdrop-filter: none;
 }
 
@@ -625,7 +658,7 @@ blockquote {
     box-shadow: none !important;
 
     overflow: hidden;
-    background: #000000;
+    background: #171526;
 }
 
 /* Encabezado */
@@ -640,13 +673,13 @@ blockquote {
 
     padding: 12px 20px;
 
-    background: #0f172a;
-    border-bottom: 1px solid #334155;
+    background: linear-gradient(90deg, #171526, #302844, #171526);
+    border-bottom: 1px solid rgba(196, 181, 253, 0.30);
 }
 
 .modal-favoritos .modal-cabecera h2 {
     margin: 0;
-    color: #ffffff;
+    color: #FFF7FF;
     font-size: clamp(1rem, 2vw, 1.4rem);
 }
 
@@ -666,8 +699,8 @@ blockquote {
     border: none;
     border-radius: 50%;
 
-    background: #334155;
-    color: #ffffff;
+    background: linear-gradient(135deg, #44345B, #8B5CC7);
+    color: #FFF7FF;
     font-size: 28px;
 
     cursor: pointer;
@@ -675,7 +708,8 @@ blockquote {
 }
 
 .modal-favoritos #cerrar-modal:hover {
-    background: #6d5bd0;
+    background: linear-gradient(135deg, #8B5CC7, #F0ABFC);
+    box-shadow: 0 0 24px rgba(167, 139, 250, 0.30);
     transform: scale(1.05);
 }
 
@@ -697,7 +731,7 @@ blockquote {
     padding: 0 !important;
 
     overflow: hidden;
-    background: #000000;
+    background: #171526;
 }
 
 /* Video */
@@ -712,7 +746,7 @@ blockquote {
     max-height: 100%;
 
     object-fit: contain;
-    background: #000000;
+    background: #171526;
 }
 
 /* Audio */
@@ -738,7 +772,7 @@ blockquote {
 
     border: none;
     border-radius: 0;
-    background: #ffffff;
+    background: #FFF7FF;
 }
 
 /* Bloquear el desplazamiento del fondo */
@@ -804,4 +838,43 @@ body.modal-abierto {
     .carrusel-indicadores button {
         transition: none;
     }
+}
+
+
+/* ========================== */
+/* FOOTER */
+/* ========================== */
+
+footer {
+    padding: 30px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #0D0B18, #151122, #1B1528);
+    border-top: 1px solid rgba(196, 181, 253, 0.25);
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.25);
+    color: #E9DDFB;
+}
+
+footer p {
+    margin: 8px 0;
+    color: #E9DDFB;
+}
+
+footer a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 20px;
+    color: #F0ABFC;
+    background: linear-gradient(135deg, #211B31, #30213D);
+    border: 1px solid rgba(196, 181, 253, 0.35);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #FFF7FF;
+    background: linear-gradient(135deg, #8B5CC7, #F0ABFC);
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+    transform: translateY(-3px);
 }
