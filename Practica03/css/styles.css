@@ -1,0 +1,1072 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(ellipse at top, #302844 0%, #171526 58%, #100E1C 100%); /* Fondo ciruela profundo */
+    color: #FFF7FF; /* Blanco suave, no lastima la vista */
+    line-height: 1.6;
+    /*border-color: red;
+    border-style: ;
+    border-width: 5px;
+    padding: 50;*/
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(23, 21, 38, 0.88);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.32);
+    box-shadow: 0 8px 28px rgba(8, 4, 8, 0.28);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+nav h2{
+    color: #F0ABFC;
+    text-shadow: 0 0 18px rgba(167, 139, 250, 0.25);
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a{
+    color: #FFF7FF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #C4B5FD;
+    text-shadow: 0 0 12px rgba(192, 132, 252, 0.55);
+}
+
+/*Parallax general */
+
+.parallax {
+    min-height: 85vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.parallax::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+   background: linear-gradient(135deg, rgba(17, 15, 32, 0.50), rgba(66, 44, 92, 0.34));
+
+}
+
+.parallax > *{
+    position: relative;
+    z-index: 2;
+}
+
+/* BACKROUNDS HD */
+*
+.parallax-1 {
+    background-image: 
+    url("../assets/images/fondo-11.png");
+}
+.parallax-2{
+    background-image: url("../assets/images/fondo-12.png");
+}
+.parallax-3{
+    background-image: url("../assets/images/fondo-13.png");
+}
+.parallax-4{
+    background-image: url("../assets/images/fondo-14.png");
+}
+
+.parallax-2,
+.parallax-3,
+.parallax-4 {
+    min-height: 55vh;
+    padding: 50px 20px;
+}
+
+
+.hero-card {
+    max-width: 700px;
+    padding: 45px;
+    text-align: center;
+    background: rgba(23, 17, 22, 0.46);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(240, 171, 252, 0.25);
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(8, 4, 8, 0.28);
+}
+
+.hero-card h1{
+    font-size: 3rem;
+    margin-bottom: 8px;
+    color: #F0ABFC;
+    text-shadow: 0 3px 24px rgba(167, 139, 250, 0.24);
+}
+
+.hero-card p {
+    font-size: 1.2rem;
+}
+
+blockquote {
+    margin: 25px auto;
+    max-width: 500px;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #8B5CC7, #F0ABFC);
+    box-shadow: 0 8px 22px rgba(139, 92, 199, 0.28);
+    color: white;
+    text-decoration: none;
+    font-weight: bold ;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(167, 139, 250, 0.32);
+    background: linear-gradient(135deg, #A78BFA, #F0ABFC);
+    color: white;
+
+}  
+
+/* 1. Alineamos la foto y el contenido en una fila horizontal */
+.glass {
+    display: flex;
+    align-items: center;       /* Centra verticalmente la foto con la columna derecha */
+    gap: 25px;                 /* Espacio de separación entre la foto y el texto */
+    padding: 40px;             /* Margen interno para que no toque los bordes */
+    text-align: left;          /* Asegura que los textos se alineen a la izquierda */
+    
+    /* Tus estilos de cristal que ya tenías */
+    background: linear-gradient(135deg, rgba(255, 243, 245, 0.12), rgba(84, 37, 56, 0.32));
+    color: #FFF7FF;
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(8, 4, 8, 0.25);
+    border: 1px solid rgba(240, 171, 252, 0.30);
+}
+
+/* 2. Ajustamos tu clase .perfil (con el clamp corregido) */
+.perfil {
+    width: clamp(140px, 20vw, 200px);
+    height: clamp(140px, 20vw, 200px);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 179, 199, 0.88);
+    box-shadow: 0 0 0 7px rgba(167, 139, 250, 0.12), 0 12px 32px rgba(0, 0, 0, 0.38);
+    
+    display: block;
+}
+
+/* 3. Evitamos que la foto se aplaste si el texto es muy largo */
+.bloque-foto {
+    flex-shrink: 0;
+}
+
+/* 4. Ordenamos verticalmente los textos y el botón en la columna derecha */
+.contenido-derecho {
+    display: flex;
+    flex-direction: column;    /* Alínea los elementos hacia abajo */
+    align-items: flex-start;   /* Alinea el botón a la izquierda (en lugar de estirarlo) */
+    gap: 3px;                 /* Espaciado ordenado entre líneas y el botón */
+}
+
+/* Ajuste opcional para el botón (quita márgenes viejos si los tenía) */
+.btn {
+    margin-top: 10px;          /* Un pequeño espacio extra superior si lo prefieres */
+}
+
+
+.hero-contenido {
+    flex: 1;
+}
+
+/* ============================= */
+/* SECCIONES */
+/*============================== */
+
+.seccion {
+    min-height: 40vh;
+    padding: 80px 8%;
+}
+
+.seccion h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 45px;
+    color: #F0ABFC;
+    text-shadow: 0 4px 24px rgba(167, 139, 250, 0.22);
+}
+
+/* ========================== */
+/* Colores solidos alternados */
+/* ========================== */
+
+.solido-1 {
+    background: linear-gradient(135deg, #171526 0%, #29233E 55%, #44345B 100%);
+}
+
+.solido-2 {
+    background: linear-gradient(135deg, #211B31 0%, #302844 55%, #5B4676 100%);
+    color: #FFF7FF;
+}
+
+.solido-3 {
+    background: linear-gradient(135deg, #171526 0%, #302844 50%, #70539A 100%);
+}
+
+.solido-4 {
+    background: linear-gradient(135deg, #211B31 0%, #44345B 55%, #5B4676 100%);
+    color: #FFF7FF;
+}
+
+/* ========================== */
+/* CONTENEDORES */
+/* ========================== */
+
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: linear-gradient(145deg, rgba(56, 32, 45, 0.96), rgba(36, 23, 32, 0.98)); /* Fondo ciruela con contraste */
+    color: #FFF7FF; /* Texto claro para mantener el contraste */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 16px 36px rgba(8, 4, 8, 0.24);
+    border: 1px solid rgba(240, 171, 252, 0.16);
+    transition: 0.3s;
+}
+
+.card h3, 
+.card h4 {
+    color: #C4B5FD; /* Oro clásico de Minecraft  */
+    margin-top: 0;   /* Quita márgenes extra para que quede centrado */
+}
+
+/* 👇 El texto descriptivo lo dejamos en un gris oscuro para que sea legible sobre el fondo blanco */
+.card p {
+    color: #FFF7FF; 
+}
+
+
+.card:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(145deg, #44345B, #5B4676);
+    border-color: rgba(196, 181, 253, 0.45);
+    box-shadow: 0 22px 45px rgba(8, 4, 8, 0.34);
+}
+
+
+
+/* ========================== */
+/* Datos personales */
+/* ========================== */
+
+.datos {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.datos article {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(145deg, rgba(167, 139, 250, 0.16), rgba(240, 171, 252, 0.08));
+    border: 1px solid rgba(196, 181, 253, 0.40);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(8, 4, 8, 0.25);
+    backdrop-filter: blur(14px);
+    color: #FFF7FF;
+    transition: 0.3s;
+}
+
+.datos article:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(145deg, rgba(167, 139, 250, 0.26), rgba(240, 171, 252, 0.16));
+    border-color: rgba(240, 171, 252, 0.65);
+    box-shadow: 0 18px 35px rgba(8, 4, 8, 0.32);
+}
+
+/* Opcional: los títulos de  hobbies tengan el color oro clásico de Minecraft */
+.datos article h3,
+.datos article h4 {
+    color: #C4B5FD; 
+}
+
+
+/* ========================== */
+/* GRID */
+/* ========================== */
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin:auto;
+}
+
+.seis {
+    grid-template-columns: repeat(6,1fr);
+}
+
+
+/* ========================== */
+/* IMAGENES */
+/* ========================== */
+
+.card img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 24px rgba(8, 4, 8, 0.22);
+}
+/* ================= */
+/* REDES SOCIALES    */
+/* ================= */
+
+.redes-sociales {
+    display: flex;           /* 1. CORREGIDO: Cambiado de text-align a display */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;       /* Añade un poco de espacio con el texto de arriba */
+}
+
+.redes-sociales a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra el contenido verticalmente */
+    gap: 12px;
+    padding: 24px;          /* Un poco más de espacio interno */
+    width: 120px;           /* 2. NUEVO: Le damos un ancho fijo para hacer cuadraditos */
+    height: 120px;          /* 2. NUEVO: Le damos un alto fijo para hacer cuadraditos */
+    color: white;
+    background: 
+        linear-gradient( 
+            145deg, 
+            #302844, 
+            #44345B
+    );
+
+    border-radius: 18px;
+    text-decoration: none;
+    box-shadow: 
+        0 12px 25px
+        rgba(8, 4, 8, 0.32);
+
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: linear-gradient(145deg, #5B4676, #A78BFA);
+    box-shadow: 0 16px 32px rgba(184, 50, 91, 0.24);
+}
+
+/* 3. ¡ESTO ES LO MÁS IMPORTANTE PARA ENCOGER AL GATITO DE GITHUB! */
+.redes-sociales a svg {
+    width: 40px;            /* Controla el ancho del icono */
+    height: 40px;           /* Controla el alto del icono */
+}
+
+/* =========================================
+   CARRUSEL DE FAVORITOS
+========================================= */
+
+.favoritos-intro {
+    text-align: center;
+    max-width: 650px;
+    margin: -20px auto 30px;
+    color: #E9DDFB;
+}
+
+#favoritos .contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#favoritos h2 {
+    text-align: center;
+    color: #F0ABFC;
+    margin-bottom: 35px;
+    text-shadow: 0 4px 22px rgba(167, 139, 250, 0.22);
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL DEL CARRUSEL
+========================================= */
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* Ventana que oculta las tarjetas inactivas */
+
+.carrusel-ventana {
+    overflow: hidden;
+    flex: 1 1 auto;
+    min-width: 0;
+    border-radius: 22px;
+}
+
+/* Pista horizontal */
+
+.carrusel-pista {
+    display: flex;
+    width: 100%;
+    transition: transform 0.45s ease;
+    will-change: transform;
+}
+
+/* =========================================
+   TARJETAS DE FAVORITOS
+========================================= */
+
+.favorito-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    padding: 25px 20px;
+    min-height: 350px;
+
+    background: linear-gradient(145deg, rgba(56, 32, 45, 0.98), rgba(36, 23, 32, 0.98));
+    color: #FFF7FF;
+
+    border: 1px solid rgba(196, 181, 253, 0.40);
+    box-shadow: 0 14px 35px rgba(8, 4, 8, 0.24);
+    border-radius: 22px;
+
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    transition: background 0.3s, border-color 0.3s,
+                transform 0.3s;
+}
+
+.favorito-card:hover {
+    background: linear-gradient(145deg, #44345B, #5B4676);
+    border-color: #C4B5FD;
+    box-shadow: 0 18px 38px rgba(8, 4, 8, 0.30);
+    transform: translateY(-3px);
+}
+
+.favorito-card:focus-visible,
+.carrusel-flecha:focus-visible,
+.carrusel-indicadores button:focus-visible {
+    outline: 3px solid #C4B5FD;
+    outline-offset: 4px;
+}
+
+/* Portadas */
+
+.favorito-card img {
+    display: block;
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Información de cada favorito */
+
+.favorito-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    color: #FFF7FF;
+}
+
+.favorito-info strong {
+    font-size: 1.15rem;
+}
+
+.favorito-info small {
+    color: #E9DDFB;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   FLECHAS DE DESPLAZAMIENTO
+========================================= */
+
+.carrusel-flecha {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 1px solid #8B6BB8;
+    border-radius: 50%;
+
+    background: linear-gradient(145deg, #44345B, #5B4676);
+    color: #FFF7FF;
+    box-shadow: 0 8px 20px rgba(8, 4, 8, 0.22);
+    font-size: 1.2rem;
+
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.carrusel-flecha:hover {
+    background: linear-gradient(135deg, #8B5CC7, #F0ABFC);
+    box-shadow: 0 8px 20px rgba(139, 92, 199, 0.28);
+    transform: scale(1.08);
+}
+
+/* =========================================
+   INDICADORES INFERIORES
+========================================= */
+
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.carrusel-indicadores button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+    background: #8B6BB8;
+
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.carrusel-indicadores button.activo {
+    background: #C4B5FD;
+    transform: scale(1.25);
+}
+
+/* =========================================
+   MODAL MULTIMEDIA A PANTALLA COMPLETA
+========================================= */
+
+/* Ocultar el modal cuando está cerrado */
+
+.modal-favoritos[hidden] {
+    display: none !important;
+}
+
+/* Fondo de pantalla completa */
+
+.modal-favoritos {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+
+    background: radial-gradient(ellipse at top, #302844 0%, #171526 58%, #100E1C 100%);
+    backdrop-filter: none;
+}
+
+/* Panel principal */
+
+.modal-favoritos .modal-panel {
+    display: flex;
+    flex-direction: column;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: 100% !important;
+    max-height: none !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    overflow: hidden;
+    background: #171526;
+}
+
+/* Encabezado */
+
+.modal-favoritos .modal-cabecera {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 12px 20px;
+
+    background: linear-gradient(90deg, #171526, #302844, #171526);
+    border-bottom: 1px solid rgba(196, 181, 253, 0.30);
+}
+
+.modal-favoritos .modal-cabecera h2 {
+    margin: 0;
+    color: #FFF7FF;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+/* Botón para cerrar */
+
+.modal-favoritos #cerrar-modal {
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #44345B, #8B5CC7);
+    color: #FFF7FF;
+    font-size: 28px;
+
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.modal-favoritos #cerrar-modal:hover {
+    background: linear-gradient(135deg, #8B5CC7, #F0ABFC);
+    box-shadow: 0 0 24px rgba(167, 139, 250, 0.30);
+    transform: scale(1.05);
+}
+
+/* Área multimedia */
+
+.modal-favoritos .modal-contenido {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden;
+    background: #171526;
+}
+
+/* Video */
+
+.modal-favoritos .modal-contenido video {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+    background: #171526;
+}
+
+/* Audio */
+
+.modal-favoritos .modal-contenido audio {
+    display: block;
+    width: min(90%, 700px);
+}
+
+/* PDF */
+
+.modal-favoritos .modal-contenido iframe {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 0;
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+    background: #FFF7FF;
+}
+
+/* Bloquear el desplazamiento del fondo */
+
+body.modal-abierto {
+    overflow: hidden !important;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO
+========================================= */
+
+@media (max-width: 600px) {
+    #favoritos {
+        padding: 65px 5%;
+    }
+
+    .carrusel {
+        gap: 8px;
+    }
+
+    .carrusel-flecha {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+
+    .favorito-card {
+        min-height: 300px;
+        padding: 18px 12px;
+    }
+
+    .favorito-card img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .favorito-info strong {
+        font-size: 1rem;
+    }
+
+    .modal-favoritos .modal-cabecera {
+        padding: 8px 12px;
+    }
+
+    .modal-favoritos .modal-cabecera h2 {
+        font-size: 1rem;
+    }
+
+    .modal-favoritos #cerrar-modal {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* Respetar la preferencia de movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+    .carrusel-pista,
+    .favorito-card,
+    .carrusel-flecha,
+    .carrusel-indicadores button {
+        transition: none;
+    }
+}
+
+
+/* ========================== */
+/* FOOTER */
+/* ========================== */
+
+footer {
+    padding: 30px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #0D0B18, #151122, #1B1528);
+    border-top: 1px solid rgba(196, 181, 253, 0.25);
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.25);
+    color: #E9DDFB;
+}
+
+footer p {
+    margin: 8px 0;
+    color: #E9DDFB;
+}
+
+footer a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 20px;
+    color: #F0ABFC;
+    background: linear-gradient(135deg, #211B31, #30213D);
+    border: 1px solid rgba(196, 181, 253, 0.35);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #FFF7FF;
+    background: linear-gradient(135deg, #8B5CC7, #F0ABFC);
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   AJUSTES RESPONSIVOS PARA CELULARES
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* Evitar desbordamientos horizontales */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Menú adaptable */
+    nav {
+        padding: 10px 4%;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 14px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    /* Fondos y secciones */
+    .parallax {
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+        padding: 65px 16px;
+        background-attachment: scroll;
+    }
+
+    .parallax-2,
+    .parallax-3,
+    .parallax-4 {
+        min-height: auto;
+        padding: 50px 16px;
+    }
+
+    .seccion {
+        width: 100%;
+        min-height: auto;
+        padding: 55px 5%;
+    }
+
+    .seccion h2 {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+        margin-bottom: 28px;
+    }
+
+    /* Tarjeta de presentación */
+    .hero-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px 18px;
+    }
+
+    .hero-card h1 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+
+    .hero-card p {
+        font-size: 1rem;
+    }
+
+    /* Foto y descripción */
+    .glass {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        padding: 25px 18px;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .contenido-derecho {
+        align-items: center;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-contenido {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .perfil {
+        width: clamp(130px, 40vw, 180px);
+        height: clamp(130px, 40vw, 180px);
+    }
+
+    /* Contenedores */
+    .contenedor {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Datos personales: dos columnas */
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .datos article {
+        min-width: 0;
+        padding: 15px 10px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Tarjetas: dos columnas */
+    .grid,
+    .grid.seis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        width: 100%;
+    }
+
+    .card {
+        min-width: 0;
+        padding: 18px 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Redes sociales */
+    .redes-sociales {
+        gap: 12px;
+    }
+
+    .redes-sociales a {
+        width: 100px;
+        height: 100px;
+        padding: 12px;
+    }
+
+    /* Carrusel */
+    .carrusel {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .favorito-card {
+        min-width: 0;
+    }
+}
+
+/* Celulares pequeños: una columna */
+@media (max-width: 480px) {
+
+    .grid,
+    .grid.seis {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .seccion {
+        padding: 45px 16px;
+    }
+
+    .hero-card {
+        padding: 22px 15px;
+    }
+
+    nav ul {
+        gap: 8px 10px;
+    }
+
+    nav a {
+        font-size: 0.78rem;
+    }
+}
