@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MecaGest: Formulario de Reagistro de Nuevos Usuarios - M250917 </title>
+    <link rel="stylesheet" href="css/styles.css">   
 </head>
 <body>
     <header>
@@ -31,7 +32,7 @@
             <br>
             
             <label for = "nombre"> Nombre: </label>
-            <input type ="text" id="nombre" placeholder="Leslie Yariveth" required>
+            <input type ="text" id="nombre" placeholder="Leslie " required>
 
             <br>
 
@@ -77,13 +78,34 @@
             <label for="horarioContacto"> Favor de contactar en el horario: </label>
             <input type="time" id="horarioContacto" placeholder="9:00">
             <input type="time" id="horarioContacto" placeholder="18:00"> 
+            <br>
+            <h4> Redes Sociales </h4>
 
+<div class="red-social-row">
+    <input type="checkbox" id="checkFacebook">
+    <label for="urlfacebook"> Facebook: </label>
+    <input type="url" id="urlfacebook" placeholder="https://facebook.com">
+</div>
+
+<div class="red-social-row">
+    <input type="checkbox" id="checkLinkedin">
+    <label for="urllinkedin"> LinkedIn: </label>
+    <input type="url" id="urllinkedin" placeholder="https://linkedin.com">
+</div>
+
+<div class="red-social-row">
+    <input type="checkbox" id="checkWhatsapp">
+    <label for="urlWhatsapp"> WhatsApp (cargar QR) : </label>
+    <input type="file" id="urlWhatsapp" accept="image/*">
+</div>
+
+    
             </fieldset>
 
             <fieldset>
                 <legend>Datos de Acceso</legend>
                 <label for="usuario"> Usuario: </label>
-                <input type="text" id="usuario" placeholder="lessTellez" required>
+                <input type="text" id="usuario" placeholder="dulcegarcia" required>
 
                 <br>
 
@@ -142,7 +164,18 @@ Acepto términos y condiciones del uso de la plataforma MecaGest.
         <legend>Visualización de Citas por Mes:</legend>
 
         <label for="mesCitas">Por favor elige el mes:</label>
-        <input type="month" id="mesCitas">
+
+        <label for="mesCitas" > Po favor , elige el filtro: </label>     
+
+        <input type="radio" value="Month" name="appoimentFilter" id="appoimentByMonth" checked> Mes 
+        <input type="radio" value="Month" name="appoimentFilter" id="appoimentByWeek" > Semana 
+
+        <br>
+
+        <input type="month">
+        <br>
+        <input type="week" disabled>
+        <br>
 
         <button id="verCitas">Ver Citas</button>
 
@@ -252,6 +285,12 @@ Acepto términos y condiciones del uso de la plataforma MecaGest.
 
     <label for="backgroundColor">Color de Fondo</label>
     <input type="color" id="backgroundColor" value="#CCC">
+    <br>
+
+    <label for="soundsVolume"> Vlumen de reproduccion de Sonidos</label>
+    <input type="range" id="soundsVolume" min="0" max="100" value="50">
+
+    <button id="muteSounds">Silenciar Sonidos</button>
 </fieldset>
 
     <fieldset>
@@ -259,7 +298,6 @@ Acepto términos y condiciones del uso de la plataforma MecaGest.
         <label for="userPhoto" > Foto de Usuario:</label>
 
         <input type="file" id="userPhoto" accept="image/*">
-        <br>
         <input type="image" id="buttonNext" src="assents/images/next.gif" alt="Siguiente" width="50" height="50"> 
         <br>
         <input type="hidden" id="userId" value="250917">
@@ -280,104 +318,138 @@ Acepto términos y condiciones del uso de la plataforma MecaGest.
         <label for="dateAppoiment"> Fecha de la Cita: </label>
         <input type="datetime-local" id="dateAppoiment">
         <br>
+
+        <label for="locations" > Elige la sucursal: </label>
+        <input list="locationsList" placeholder="Elige la sucursal" id="locations">
+        <datalist id="locationsList">
+            <option> Xicotepec, Centro </option>
+            <option> Xicotepec, El tabacal  </option>
+            <option> San Isidro, Tierra Negra  </option>
+            <option> Necaxa, Canaditas   </option>
+            <option> Huauchinango, Petrolera 1 </option>
+
+        </datalist>
+        <br>
+        <br>
         <label for="descriptionText"> Descripcion de la Cita: </label>
         <textarea id="descriptionText"> </textarea>
     </fieldset>
 
     <fieldset>
+
+        <legend> Solicitud de Herramientas y Refacciones para Servicio Mecanico: </legend>
+        <label for="resourceCategory"> Categoria de Recursos: </label>
+        <input type="radio" id="resourceRefaction" name="resourceCategory" value="refaccion"> Refaccion
+        <input type="radio" id="resourceTool" name="resourceCategory" value="tool"> Herramienta
+
+        <br> 
+
         <legend> Solicitud de Herramienta para Servicio Mécanico: </legend>
-        <label for="resourceCategory">Categoría de Recurso</label>
-        <input type="radio" id="resourceRefaction" name="resourceCategory" value="refaccion">Refacción
-        <input type="radio" id="resourceTool" name="resourceCategory" value="tool">Herramienta
-        <br>
-        <label for="resourceCategoryPieza">Pieza</label>
-        <label for="toolName"> Elige la pieza: </label>
+        <label for="toolName"> Elgige la pieza: </label>
         <select>
             <optgroup label="Piezas de Motor">
-                <option value="bujia">Bujía</option>
-                <option value="filtro_aceite">Filtro de aceite</option>
-                <option value="banda_distribucion">Banda de distribución</option>
+                <option value="bujia"> Bujía </option>
+                <option value="filtro_aceite"> Filtro de Aceite</option>
+                <option value="banda_distribucion"> Banda de Distribucion </option>
             </optgroup>
-            <optgroup label="Piezas de Transmisión">
-                <option value="disco_embrague">Disco de embrague</option>
-                <option value="collarin">Collarín de embrague</option>
-                <option value="junta_homocinetica">Junta homocinetica</option>
-                <option value="smieje">Semieje de transmisión</option>
+
+            <optgroup label= "Piezas de Transmision">
+                <option value="disco_enbrague"> Disco de enbrague </option>
+                <option value="collarin"> Collarín de enbrague </option>
+                <option value="junta_homocinetica"> Junta homocinetica </option>
+                <option value="semieje"> Semeije de transmision </option>
             </optgroup>
-            <optgroup label="Piezas de Suspensión">
-                <option value="amortiguador">Amortiguador</option>
-                <option value="rotula">Rótula de suspensión</option>
-            </optgroup>    
+
+            <optgroup label="Piezas de Suspencion">
+                <option value="amortiguador"> Amortiguador </option>
+                <option value="rotula"> Rótula de suspension </option>
+            </optgroup>
+
             <optgroup label="Llaves y Herramientas Especializadas">
-                <option value="llave_combinada">Llave combinada</option>
-                <option value="llave_torx">Llave dinométrica</option>
-                <option value="extractor_poleas">Extractor de poleas</option>   
-                <option value="compresor_resortes">COmpresor de resortes</option>
-                <option value="scanner_obd2">Escáner automotriz OBD-II</option> 
-            </optgroup>    
+                <option value="llave_combinada"> Llave combinada </option>
+                <option value="llave_torx"> Llave dinometrica</option>
+                <option value="extractor_poleas"> Extractor de poleas </option>
+                <option value="comprensor_resortes"> Comprensor de resortes</option>
+                <option value="scanner_obd2"> Escaner automotriz ODB-II</option>
+            </optgroup>
         </select>
-        <label for="toolQuantity">Cantidad: </label>
+        <label for="toolQuantity"> Cantidad: </label>
         <input type="number" id="toolQuantity" min="1" max="10">
-        <button id="requestTool">Solicitar Herramienta</button>
-        <br>
-        <table border="1" cellpadding="8" cellspacing="0">
-    <caption>Herramientas para la orden de servicio</caption>
+        <button id="requestTool">Solicitar Herramienta </button>
+        <br> 
 
-    <thead>
-        <tr>
-            <th scope="col">No.</th>
-            <th scope="col">Herramienta</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Unidad</th>
-        </tr>
-    </thead>
+        <br> 
 
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Llave combinada</td>
-            <td>Herramienta manual</td>
-            <td>4</td>
-            <td>Piezas</td>
-        </tr>
+        Herramientas para la orden de servicio
 
-        <tr>
-            <td>2</td>
-            <td>Llave dinamométrica</td>
-            <td>Herramienta especializada</td>
-            <td>2</td>
-            <td>Piezas</td>
-        </tr>
+        <table style="border: 1px solid black; border-collapse: collapse; width: 50%"> 
+            <tr>
+                <th style="border: 1px solid black">No.</th>
+                <th style="border: 1px solid black">Herramienta</th>
+                <th style="border: 1px solid black">Categoria</th>
+                <th style="border: 1px solid black">Cantidad</th>
+                <th style="border: 1px solid black">Unidad</th>
+            </tr>
 
-        <tr>
-            <td>3</td>
-            <td>Extractor de poleas</td>
-            <td>Herramienta especializada</td>
-            <td>1</td>
-            <td>Juego</td>
-        </tr>
+            <tr>
+                <td style="border: 1px solid black">1.</td>
+                <td style="border: 1px solid black">
+                    Llave combinada 
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta manual 
+                </td>
+                <td style="border: 1px solid black">4 </td>
+                <td style="border: 1px solid black">Piezas </td>
+            </tr>
 
-        <tr>
-            <td>4</td>
-            <td>Llave Torx</td>
-            <td>Herramienta manual</td>
-            <td>3</td>
-            <td>Juegos</td>
-        </tr>
-    </tbody>
+            <tr>
+                <td style="border: 1px solid black">2.</td>
+                <td style="border: 1px solid black">
+                    Llave dinamometrica 
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta especializada 
+                </td>
+                <td style="border: 1px solid black"> 2 </td>
+                <td style="border: 1px solid black">Piezas </td>
+            </tr>
 
-    <tfoot>
-        <tr>
-            <th colspan="3" scope="row">Total de unidades</th>
-            <td>10</td>
-            <td>-</td>
-        </tr>
-    </tfoot>
-</table>
+            <tr>
+                <td style="border: 1px solid black">3.</td>
+                <td style="border: 1px solid black">
+                    Extractor de poleas  
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta especializada 
+                </td>
+                <td style="border: 1px solid black"> 1 </td>
+                <td style="border: 1px solid black"> Juego </td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">4.</td>
+                <td style="border: 1px solid black">
+                    Llave Torx  
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta manual 
+                </td>
+                <td style="border: 1px solid black"> 3 </td>
+                <td style="border: 1px solid black"> Juegos </td>
+            </tr>
+
+            <tr> 
+                <th colspan="3" style="border: 1px solid black; text-align: center;">Total Unidades</th> 
+                <td style="border: 1px solid black;">10</td>
+                <td style="border: 1px solid black;">-</td> 
+            </tr> 
+
+        </table>
     </fieldset>
+
+
 
 </main>
 </body>
 </html>
-
