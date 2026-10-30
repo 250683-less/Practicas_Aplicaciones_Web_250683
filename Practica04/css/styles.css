@@ -465,3 +465,11 @@ hr {
         padding: 9px;
     }
 }
+
+
+
+#resultadoEdad {
+    font-weight: bold;
+    color: #2d1c8f;
+    margin-top: 8px;
+}
