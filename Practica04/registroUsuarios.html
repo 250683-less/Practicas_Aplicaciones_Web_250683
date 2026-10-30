@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MecaGest: Formulario de Reagistro de Nuevos Usuarios - M250917 </title>
     <link rel="stylesheet" href="css/styles.css">   
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -55,8 +56,12 @@
 
             <br>
 
-            <label for = "Fecha Nacimiento"> Fecha de Nacimiento: </label>
-            <input type ="date" id="Fecha Nacimiento"> 
+            <label for="fechaNacimiento">
+                 Fecha de Nacimiento:
+                </label>
+                <input type="date" id="fechaNacimiento">
+                <button type="button" id="validarEdad">Validar edad</button>
+                <p id="resultadoEdad"></p> 
 
             </fieldset>
 
@@ -210,7 +215,7 @@ Acepto términos y condiciones del uso de la plataforma MecaGest.
             <tr>
     <td style="border: 1px solid black;">2.</td>
     <td style="border: 1px solid black;">
-        Cita de valoración con el cliente: Carlos Hernández,
+        Cita de valoración con el cliente: Leslie Tellez,
         Unidad: Nissan, Versa 2021
     </td>
     <td style="border: 1px solid black;">
